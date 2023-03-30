@@ -1,0 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    map_generator                                      :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: sacorder <sacorder@student.42madrid.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/21 15:49:37 by sacorder          #+#    #+#              #
+#    Updated: 2023/02/21 15:49:50 by sacorder         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#!/usr/bin/perl
+use warnings;
+use strict;
+die "program x y density" unless (scalar(@ARGV) == 3);
+my ($x, $y, $density) = @ARGV;
+print "$y.XS\n";
+for (my $i = 0; $i < $y; $i++) {
+for (my $j = 0; $j < $x; $j++) {
+if (int(rand($y) * 2) < $density) {
+print "X";
+}
+else {
+print ".";
+}
+}
+print "\n";
+}
